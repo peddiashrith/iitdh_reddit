@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pending Posts</title>
+  </head>
+  <body>
+    <h1>Pending posts</h1>
+    {% for post in posts %}
+    <label>Title: </label>{{post.header}}
+    <br />
+    <label>Author: </label>{{post.author}}
+    <br />
+    <a href="{% url 'accept_post' post.id %}" type="submit">Submit</a>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
