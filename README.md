@@ -5,7 +5,8 @@
 ## Prerequisites
 
 1. Postgresql -- pip install psycopg2
-2. Crispy Forms -- pip install django-crispy-forms
+2. Django -- pip install Django
+3. Crispy Forms -- pip install django-crispy-forms
 
 ## Starting Instructions
 
