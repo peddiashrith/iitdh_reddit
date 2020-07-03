@@ -7,7 +7,6 @@
 2. Crispy Forms -- pip install django-crispy-forms
 
 ## Starting Instructions
-1. PostgreSQL should be installed
 2. Change your database name, id and password in the settings.py file
 3. Python manage.py makemigrations
 4. Python manage.py migrate
