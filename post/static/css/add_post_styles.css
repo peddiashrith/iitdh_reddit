@@ -1,0 +1,70 @@
+.subreddit-display h1{
+    color: #FBF9FF;
+    /*background-color: #D00000*/
+}
+
+.subreddit-display small {
+	color: #4E6E5D;
+}
+
+.subreddit-display h1 span {
+    /*background-color: #A2A3BB*/
+}
+
+
+.container.header-container {
+    padding-top: 70px;
+}
+
+.post-header h1{
+	color : #FBF9FF;
+}
+
+.container.post-container {
+}
+
+.bs-docs-section pre {
+	background-color: #FBF9FF
+}
+
+.post-header {
+	font-style: normal;
+	font-size: 30px;
+}
+
+.post-details {
+	font-style: normal;
+	font-size: 24px;
+}
+
+.entry-label {
+	text-align: left;
+	font-size: 15px;
+}
+
+.form-control {
+	/*padding-top: 50px;*/
+	font-size: 15px
+}
+
+.form-control.post-details {
+	min-height: 100px;
+	box-sizing: border-box;
+}
+
+.form-group p {
+	color: #4E6E5D;
+}
+
+.add-file-button {
+	border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+	background-color: #2F3061;
+	color :#FBF9FF;
+}
+
+input[type="file"] {
+    display: none;
+}

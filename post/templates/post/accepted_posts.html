@@ -1,17 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accepted Posts</title>
-  </head>
-  <body>
-    <h1>Accepted posts</h1>
-    {% for post in posts %}
-    <label>Title: </label>{{post.header}}
-    <br />
-    <label>Author: </label>{{post.author}}
-    <hr />
-    {% endfor %}
-  </body>
-</html>
+{% extends 'post/main.html' %}
+
+{% block content %}
+<!-- <h1>Accepted posts</h1> -->
+<div class = "container header-container">
+  <div class="subreddit-display">
+      <h1 id="overview" class="page-header"><span><a class="anchorjs-link " href="#overview" aria-label="Anchor link for: overview" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>u/alphamaxnova1</span></h1>
+  </div>
+</div>
+
+<!-- posts -->
+
+<div class = "container post-container">
+<div class="row">
+  <div class="col-md-9" role="main">
+    <div class="bs-docs-section">
+        <pre>
+          <h1 id = "PostHead" class="post-header"><span>Every Race Highlights</span></h1>
+          <h2 id = "PostDetails" class = "post-details"><span>Click <a href = "https://www.youtube.com/watch?v=EYr3lIU5L1k">here</a> for the Link</span></h2>
+        </pre>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class = "container post-container">
+<div class="row">
+  <div class="col-md-9" role="main">
+    <div class="bs-docs-section">
+        <pre>
+          <h1 id = "PostHead" class="post-header"><span>Every Race Highlights Pt. 2</span></h1>
+          <h2 id = "PostDetails" class = "post-details"><span>Click <a href = "https://www.youtube.com/watch?v=EYr3lIU5L1k">here</a> for the Link (Same as above xD)</span></h2>
+        </pre>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
