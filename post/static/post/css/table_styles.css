@@ -1,0 +1,33 @@
+.buttons {
+    border: none;
+    block-size: auto;
+    text-align: center;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.buttons.accept {
+    background-color : #419D78;
+    color : #FBF9FF
+}
+
+.buttons.reject {
+    background-color: #DB2763;
+    color: #FBF9FF;
+}
+
+.text.left {
+    font-size: medium;   
+}
+
+.text.desc {
+    font-size: medium;
+    font-style: normal;
+}
+
+.text.header {
+    font-size: large;
+    font-style: normal;
+}
+

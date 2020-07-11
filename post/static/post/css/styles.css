@@ -1,0 +1,41 @@
+.navbar-fixed-top {
+    min-height: 80px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+    max-height: 200px;
+}
+.navbar-collapse {
+    margin-top: 1%;
+}
+.navbar{ 
+    background-image: none;
+}
+@media (min-width: 768px) {
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 80px;
+        color: white;
+    }
+}
+
+.navbar {
+    background-color: #2F3061;
+}
+
+#myNavbar {
+    background-color:#2F3061;
+    border-radius:0;
+    z-index: 1000;
+}  
+
+.nav.navbar-nav li a {
+    color: #FBF9FF;
+}
+
+.nav.navbar-nav.navbar-right input.form-control[type=text]{
+    margin-top: 5%;
+}
+
+.form-control.search-bar {
+    background-image: url('searchicon.png')
+}
