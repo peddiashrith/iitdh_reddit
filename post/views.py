@@ -35,7 +35,7 @@ def create_post(request):
             newpost = newpost.save(commit=False)
             newpost.author = request.user
             newpost.save()
-            return redirect('accepted_posts')
+            return redirect('pending_posts')
         else:
             return HttpResponse("Form is not valid")
     context = {'form': form}
@@ -54,11 +54,11 @@ def edit_post(request, id):
         raise Http404
     form = PostEditForm(instance=post)
     if request.method == "POST":
-        post = PostEditForm(request.POST, instance=post)
+        form = PostEditForm(request.POST, instance=post)
         if form.is_valid():
-            post.save()
+            form.save()
             return redirect('pending_posts')
         else:
             return HttpResponse("Form is not valid")
     context = {'form': form}
-    return render(request, 'post/create_post.html', context)
+    return render(request, 'post/update_post.html', context)

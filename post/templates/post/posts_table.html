@@ -9,7 +9,7 @@
     {% for post in posts %}
     <tbody>
         <th><p class = "text left">{{post.id}}</p></th>
-        <td><a href={{post.links}} class = "text desc">{{post.header}}</a></th>
+        <td><a href="#" class = "text desc">{{post.header}}</a></th>
         <td><a class = "btn buttons accept" href="{% url 'accept_post' post.id %}">Accept</a></th>
         <td><a class = "btn buttons reject">Reject</a></th>
     </tbody>
