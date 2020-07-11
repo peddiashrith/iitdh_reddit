@@ -1,1 +1,8 @@
 __pycache__
+.vscode
+newenv/
+.Python
+lib/
+lib64/
+bin/
+include/

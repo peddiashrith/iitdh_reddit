@@ -1,40 +1,49 @@
-{% extends 'post/main.html' %}
-
-{% block content %}
+{% extends 'post/main.html' %}{% load static %} {% block content %}
 <!-- <h1>Accepted posts</h1> -->
-<div class = "container header-container">
-  <div class="subreddit-display">
-      <h1 id="overview" class="page-header"><span><a class="anchorjs-link " href="#overview" aria-label="Anchor link for: overview" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>u/alphamaxnova1</span></h1>
-  </div>
+<div class="container header-container">
+    <div class="subreddit-display">
+        <h1 id="overview" class="page-header">
+            <span
+                ><a
+                    class="anchorjs-link"
+                    href="#overview"
+                    aria-label="Anchor link for: overview"
+                    data-anchorjs-icon=""
+                    style="
+                        font-style: normal;
+                        font-variant: normal;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-size: 1em;
+                        line-height: inherit;
+                        font-family: anchorjs-icons;
+                        position: absolute;
+                        margin-left: -1em;
+                        padding-right: 0.5em;
+                    "
+                ></a
+                >u/alphamaxnova1</span
+            >
+        </h1>
+    </div>
 </div>
 
 <!-- posts -->
-
-<div class = "container post-container">
-<div class="row">
-  <div class="col-md-9" role="main">
-    <div class="bs-docs-section">
-        <pre>
-          <h1 id = "PostHead" class="post-header"><span>Every Race Highlights</span></h1>
-          <h2 id = "PostDetails" class = "post-details"><span>Click <a href = "https://www.youtube.com/watch?v=EYr3lIU5L1k">here</a> for the Link</span></h2>
-        </pre>
+{% for post in posts %}
+<div class="container post-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="bs-docs-section">
+                <pre>
+        <h1 id = "PostHead" class="post-header"><span>Header: {{post.header}}</span></h1>
+        <h1 id = "PostHead" class="post-header"><span>Author: {{post.author}}</span></h1>
+        {%for link in post.links%}
+    <h2 id = "PostDetails" class = "post-details"><span>Links: <a href = {{link}}>{{link}}</a></span></h2>
+    {% endfor %}
+        
+      </pre>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-</div>
-
-<div class = "container post-container">
-<div class="row">
-  <div class="col-md-9" role="main">
-    <div class="bs-docs-section">
-        <pre>
-          <h1 id = "PostHead" class="post-header"><span>Every Race Highlights Pt. 2</span></h1>
-          <h2 id = "PostDetails" class = "post-details"><span>Click <a href = "https://www.youtube.com/watch?v=EYr3lIU5L1k">here</a> for the Link (Same as above xD)</span></h2>
-        </pre>
-    </div>
-  </div>
-</div>
-</div>
-
-
-{% endblock %}
+{% endfor %} {% endblock %}

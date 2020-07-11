@@ -1,20 +1,17 @@
+{% load static %}
 <table class = 'table'>
     <thead>
-        <th><p class = "text header">S. No.</p></th>
+        <th><p class = "text header">ID</p></th>
         <th><p class = "text header">Header</p></th>
         <th><p class = "text header">Accept</p></th>
         <th><p class = "text header">Reject</p></th>
     </thead>
+    {% for post in posts %}
     <tbody>
-        <th><p class = "text left">1</p></th>
-        <td><a href="#" class = "text desc">Operating Systems Book</a></th>
-        <td><button class = "buttons accept">Accept</button></th>
-        <td><button class = "buttons reject">Reject</button></th>
+        <th><p class = "text left">{{post.id}}</p></th>
+        <td><a href={{post.links}} class = "text desc">{{post.header}}</a></th>
+        <td><a class = "btn buttons accept" href="{% url 'accept_post' post.id %}">Accept</a></th>
+        <td><a class = "btn buttons reject">Reject</a></th>
     </tbody>
-    <tbody>
-        <th><p class = "text left">2</p></th>
-        <td><a href="#" class = "text desc">Computer Architecture Book</a></th>
-        <td><button class = "buttons accept">Accept</button></th>
-        <td><button class = "buttons reject">Reject</button></th>
-    </tbody>
+    {% endfor %}
 </table>

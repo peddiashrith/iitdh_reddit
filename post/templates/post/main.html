@@ -2,26 +2,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <style type="text/css">
-    body { background: #9395D3 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-  </style>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/getting-started/">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/post_styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/table_styles.css' %}">
-    <title>IITDH Reddit</title>
-  </head>
-  <body>
-
-    {% include 'post/navbar.html' %}
-
-    {% block content %}
-    
-    {% endblock %}
-  </body>
+    <style type="text/css">
+        body {
+            background: #9395d3 !important;
+        } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="canonical"
+            href="https://getbootstrap.com/docs/3.4/getting-started/"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+            integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'post/css/styles.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'post/css/post_styles.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'post/css/table_styles.css' %}"
+        />
+        <title>IITDH Reddit</title>
+    </head>
+    <body>
+        {% include 'post/navbar.html' %} {% block content %} {% endblock %}
+    </body>
 </html>

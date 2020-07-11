@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]
 
-STATICFILES_DIRS = ["../post/static/"]
-
 
 # Application definition
 
@@ -89,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'iitdh_reddit',
-        'USER': 'mehulbose',
-        'PASSWORD': '123456',
+        'USER': 'postgres',
+        'PASSWORD': 'peddi',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -134,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = ["../post/static/"]
+MEDIA_URL = '/media/'
