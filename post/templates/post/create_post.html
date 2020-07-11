@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %} {{form|crispy}}
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Post</button>
+      </div>
+    </form>
+  </body>
+</html>
