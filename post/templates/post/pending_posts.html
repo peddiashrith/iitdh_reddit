@@ -1,19 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pending Posts</title>
-  </head>
-  <body>
-    <h1>Pending posts</h1>
-    {% for post in posts %}
-    <label>Title: </label>{{post.header}}
-    <br />
-    <label>Author: </label>{{post.author}}
-    <br />
-    <a href="{% url 'accept_post' post.id %}" type="submit">Submit</a>
-    <hr />
-    {% endfor %}
-  </body>
-</html>
+{% extends 'post/main.html' %}{% load static %} {% block content %}
+<!-- <h1>Pending posts</h1> -->
+<div class="container header-container">
+    <div class="subreddit-display">
+        <h1 id="overview" class="page-header">
+            <span
+                ><a
+                    class="anchorjs-link"
+                    href="#overview"
+                    aria-label="Anchor link for: overview"
+                    data-anchorjs-icon=""
+                    style="
+                        font-style: normal;
+                        font-variant: normal;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-size: 1em;
+                        line-height: inherit;
+                        font-family: anchorjs-icons;
+                        position: absolute;
+                        margin-left: -1em;
+                        padding-right: 0.5em;
+                    "
+                ></a
+                >u/alphamaxnova1</span
+            >
+        </h1>
+    </div>
+</div>
+
+<div class="container post-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="bs-docs-section">
+                <pre>
+            {% include 'post/posts_table.html' %}
+          </pre
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
