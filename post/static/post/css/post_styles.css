@@ -1,5 +1,5 @@
 .subreddit-display h1{
-    color: #FBF9FF;
+    /* color: #FBF9FF; */
 /*    background-color: #D00000
 */}
 
@@ -9,15 +9,15 @@
 }
 
 
-.container.header-container {
-    padding-top: 70px;
+.container.header-container h1 {
+	padding-top: 70px;
 }
 
 .container.post-container {
 }
 
 .bs-docs-section pre {
-	background-color: #FBF9FF
+	background-color: #FBF9FF;
 }
 
 .post-header {
@@ -29,4 +29,3 @@
 	font-style: normal;
 	font-size: 24px;
 }
-

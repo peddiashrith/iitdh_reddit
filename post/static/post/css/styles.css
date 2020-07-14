@@ -5,9 +5,11 @@
 .navbar-fixed-top .navbar-collapse {
     max-height: 200px;
 }
+
 .navbar-collapse {
     margin-top: 1%;
 }
+
 .navbar{ 
     background-image: none;
 }
@@ -37,5 +39,28 @@
 }
 
 .form-control.search-bar {
-    background-image: url('searchicon.png')
+    /* background-image: url('searchicon.png') */
+}
+
+.textinput.textInput {
+    border-radius: 4px;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    /* color: black; */
+    background-color: #FBF9FF;   
+}
+
+.control-label {
+    color: #4E6E5D;
+    text-align: left;
+}
+
+.asteriskField {
+    color: #DB2763;
+}
+
+.btn.btn-outline-info {
+    border-radius: 4px;
+    background-color: #419D78;
+    color: #FBF9FF;
 }

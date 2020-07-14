@@ -1,17 +1,28 @@
+{% extends 'post/main.html' %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Post</title>
-  </head>
-  <body>
+{% block content %}
+<div class="container header-container">
+  <div class="subreddit-display">
+    <h1 id="overview" class="page-header"><span>Create a Post</span></h1>
+  </div>
+</div>
     <form method="POST">
-      {% csrf_token %} {{form|crispy}}
       <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Post</button>
+        <div class="container post-container">
+          <div class="row">
+              <div class="col-md-9" role="main">
+                  <div class="bs-docs-section">
+                      <pre class = "pre-box">
+                        {% csrf_token %} {{form|crispy}}
+                        <button class="btn btn-outline-info" type="submit">Post</button>              
+                      </pre>
+                  </div>
+              </div>
+          </div>
+        </div>
       </div>
     </form>
-  </body>
-</html>
+  
+{% endblock %}
+
+
