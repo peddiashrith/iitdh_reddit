@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post Detail</title>
-  </head>
-  <body>
-    <h1>Post Detail</h1>
-    Author: {{post.author}}
-    <hr />
-    Header: {{post.header}}
-    <hr />
-    Links:
-    <br />
-    {%for link in post.links%}
-    <a href="{{link}}">{{link}}</a>
-    {% endfor %}
-  </body>
-</html>
+<div class="container post-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="bs-docs-section">
+                <pre>
+      <h1 id = "PostHead" class="post-header"><span>Header: {{post.header}}</span></h1>
+      <h1 id = "PostHead" class="post-header"><span>Author: {{post.author}}</span></h1>
+      {% for link in post.links %}
+  <h2 id = "PostDetails" class = "post-details"><span>Links: <a href = {{link}}>{{link}}</a></span></h2>  
+  {% endfor %}      
+    </pre>
+            </div>
+        </div>
+    </div>
+</div>
