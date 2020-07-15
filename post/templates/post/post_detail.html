@@ -1,15 +1,28 @@
+{% extends 'post/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container header-container">
+  <div class="subreddit-display">
+      <h1 id="overview" class="page-header">
+          <span>Which Subreddit?</span>
+      </h1>
+  </div>
+</div>  
 <div class="container post-container">
-    <div class="row">
-        <div class="col-md-9" role="main">
-            <div class="bs-docs-section">
-                <pre>
-      <h1 id = "PostHead" class="post-header"><span>Header: {{post.header}}</span></h1>
-      <h1 id = "PostHead" class="post-header"><span>Author: {{post.author}}</span></h1>
-      {% for link in post.links %}
-  <h2 id = "PostDetails" class = "post-details"><span>Links: <a href = {{link}}>{{link}}</a></span></h2>  
-  {% endfor %}      
-    </pre>
-            </div>
-        </div>
-    </div>
-</div>
+  <div class = "post-display">
+    <h1 id = "PostHead" class="post-header"><span>{{post.header}}</span></h1>
+    <h4 id = "PostAuthor" class="post-display"><span>Author: {{post.author}}</span></h4>
+    <h5 id = "PostLinks" class="post-display"><span>Links:</span></h5>
+    {%for link in post.links%}
+    <h5>
+    <a href="{{link}}">{{link}}</a>
+    </h5>
+    {% endfor %}
+  </div>
+  <br>
+  <br>
+  <br>
+  <button type="button" class="btn btn-secondary btn-lg btn-block">Return to previous page</button>
+</div> 
+{% endblock %}
+=======

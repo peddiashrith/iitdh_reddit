@@ -7,9 +7,19 @@
     padding-right: 10px;
 }
 
+.buttons.view {
+	background-color: #419D78;
+}
+
 .buttons.accept {
     background-color : #419D78;
-    color : #FBF9FF
+    color : #FBF9FF;
+}
+
+.buttons.accept.view {
+    background-color : #419D78;
+    color : #FBF9FF;
+    border-width : 2px;
 }
 
 .buttons.reject {

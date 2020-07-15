@@ -1,3 +1,10 @@
+.post-header {
+	font-style: normal;
+	font-size: 30px;
+	/* background-color: black; */
+}
+
+
 .subreddit-display h1{
     /* color: #FBF9FF; */
 /*    background-color: #D00000
@@ -5,7 +12,12 @@
 
 .subreddit-display h1 span {
     color: #FBF9FF;    
-    /*background-color: #A2A3BB*/
+    /* background-color: #A2A3BB */
+}
+
+.post-display h1 span {
+    color: #419D78;    
+    /* background-color: #A2A3BB */
 }
 
 
@@ -14,18 +26,16 @@
 }
 
 .container.post-container {
+	padding-top: 0px;
 }
 
 .bs-docs-section pre {
 	background-color: #FBF9FF;
 }
 
-.post-header {
-	font-style: normal;
-	font-size: 30px;
-}
 
 .post-details {
 	font-style: normal;
-	font-size: 24px;
+	font-size: 20px;
 }
+

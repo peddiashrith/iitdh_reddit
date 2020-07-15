@@ -35,10 +35,11 @@
         <div class="col-md-9" role="main">
             <div class="bs-docs-section">
                 <pre>
-        <h1 id = "PostHead" class="post-header"><span>Header: {{post.header}}</span></h1>
-        <h1 id = "PostHead" class="post-header"><span>Author: {{post.author}}</span></h1>
+        <h1 id = "PostHead" class="post-header"><span>{{post.header}}</span></h1>
+        <p id = "PostHead" class="post-details"><span>Author: {{post.author}}</span></p>
         {%for link in post.links%}
-    <h2 id = "PostDetails" class = "post-details"><span>Links: <a href = {{link}}>{{link}}</a></span></h2>
+    <p id = "PostDetails" class = "post-details">Links:<br></p><span><a href = {{link}}>{{link}}</a></span><br>
+    <button type="button" class="btn btn-info" style = "float: right">Info</button>
     {% endfor %}
         
       </pre>
