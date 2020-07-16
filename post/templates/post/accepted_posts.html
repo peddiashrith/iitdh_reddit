@@ -39,9 +39,8 @@
         <p id = "PostHead" class="post-details"><span>Author: {{post.author}}</span></p>
         {%for link in post.links%}
     <p id = "PostDetails" class = "post-details">Links:<br></p><span><a href = {{link}}>{{link}}</a></span><br>
-    <button type="button" class="btn btn-info" style = "float: right">Info</button>
+    <a href="{% url 'post_detail' post.id %}" type="button" class="btn btn-info" style = "float: right">Info</a>
     {% endfor %}
-        
       </pre>
             </div>
         </div>
