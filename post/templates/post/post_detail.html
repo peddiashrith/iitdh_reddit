@@ -7,27 +7,15 @@
     </div>
 </div>
 <div class="container post-container">
-    <div class="post-display">
-        <h1 id="PostHead" class="post-header"><span>{{post.header}}</span></h1>
-        <h4 id="PostAuthor" class="post-display">
-            <span>Author: {{post.author}}</span>
-        </h4>
-        <h5 id="PostLinks" class="post-display"><span>Links:</span></h5>
-        {%for link in post.links%}
-        <h5>
-            <a href="{{link}}">{{link}}</a>
-        </h5>
-        {% endfor %}
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post.header}}</h5>
+      <p class="card-text">Author: {{post.author}} <br> Links: {%for link in post.links%}<a href="{{link}}">{{link}}{% endfor %}</a></p>
+      <a href="#" class="btn btn-primary">Go to Link</a>
     </div>
-    <br />
-    <br />
-    <br />
-    <a
-        href="{% url 'accepted_posts' %}"
-        type="button"
-        class="btn btn-secondary btn-lg btn-block"
-    >
-        Return to previous page
-    </a>
-</div>
+  </div> 
+  <br><br><br>
+  <button type="button" class="btn btn-secondary btn-lg btn-block">Return to previous page</button>
+</div> 
 {% endblock %}

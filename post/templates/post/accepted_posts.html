@@ -29,21 +29,17 @@
 </div>
 
 <!-- posts -->
-{% for post in posts %}
+{{% for post in posts %}
 <div class="container post-container">
-    <div class="row">
-        <div class="col-md-9" role="main">
-            <div class="bs-docs-section">
-                <pre>
-        <h1 id = "PostHead" class="post-header"><span>{{post.header}}</span></h1>
-        <p id = "PostHead" class="post-details"><span>Author: {{post.author}}</span></p>
-        {%for link in post.links%}
-    <p id = "PostDetails" class = "post-details">Links:<br></p><span><a href = {{link}}>{{link}}</a></span><br>
-    <a href="{% url 'post_detail' post.id %}" type="button" class="btn btn-info" style = "float: right">Info</a>
-    {% endfor %}
-      </pre>
-            </div>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{post.header}}</h5>
+          <p class="card-text">Author: {{post.author}} <br> Links: {%for link in post.links%}<a href="{{link}}">{{link}}{% endfor %}</a></p>
+          <a href="#" class="btn btn-primary">Go to Link</a>
         </div>
+      </div>         
     </div>
 </div>
-{% endfor %} {% endblock %}
+{% endfor %}
+{% endblock %}
