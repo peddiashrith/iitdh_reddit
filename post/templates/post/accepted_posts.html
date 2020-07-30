@@ -31,8 +31,8 @@
 <!-- posts -->
 {{% for post in posts %}
 <div class="container post-container">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card" style="width: 60rem;">
+        <!-- <img  src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title">{{post.header}}</h5>
           <p class="card-text">Author: {{post.author}} <br> Links: {%for link in post.links%}<a href="{{link}}">{{link}}{% endfor %}</a></p>
@@ -41,5 +41,7 @@
       </div>         
     </div>
 </div>
+<br>
+<br>
 {% endfor %}
 {% endblock %}
