@@ -5,22 +5,6 @@ from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
 
 
-class Role(models.Model):
-    U = "USER"
-    M = "MODERATOR"
-    A = "ADMIN"
-    role_choices = [
-        (U, "USER"),
-        (M, "MODERATOR"),
-        (A, "ADMIN"),
-    ]
-    name = models.CharField(
-        max_length=12, choices=role_choices, default=U, unique=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Tag(models.Model):
     name = models.CharField(max_length=256)
 
@@ -31,18 +15,15 @@ class Tag(models.Model):
 class SubReddit(models.Model):
     name = models.CharField(max_length=256)
     moderators = models.ManyToManyField(User, blank=True)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self):
         return self.name
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    role = models.ForeignKey(
-        Role, on_delete=models.SET_NULL, blank=True, null=True)
-    subreddit_following = models.ManyToManyField(
-        SubReddit, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    subreddit_following = models.ManyToManyField(SubReddit, blank=True)
 
     def __str__(self):
         return self.user.username
@@ -71,3 +52,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.header
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now=True)
+    text = models.CharField(max_length=256)
+
+    def __str__(self):
+        return f'[{self.text}] by {self.user.username} on ({self.post.header}) at  <{self.timestamp}> '
