@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post',
     'crispy_forms',
+    'rest_framework',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -88,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'iitdh_reddit',
         'USER': 'postgres',
-        'PASSWORD': 'peddi',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
