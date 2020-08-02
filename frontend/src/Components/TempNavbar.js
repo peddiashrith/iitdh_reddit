@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
-// import Container from "@material-ui/core/Container";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
@@ -19,6 +18,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        // maxWidth: 345,
         maxWidth: 600,
         margin: "auto",
         marginTop: "10px",
@@ -50,6 +50,7 @@ export default function RecipeReviewCard() {
     const Posts = [
         {
             name: "AA",
+            id: "1",
             title: "Machine Learning",
             subheader: "September 14, 2016",
             description:
@@ -57,6 +58,7 @@ export default function RecipeReviewCard() {
         },
         {
             name: "SP",
+            id: "2",
             title: "Machine School",
             subheader: "September 14, 2016",
             description:
@@ -102,10 +104,30 @@ export default function RecipeReviewCard() {
                             {post.description}
                         </Typography>
                     </CardContent>
-                    <hr></hr>
-                    <CardHeader subheader="hello" />
-                    <hr></hr>
-                    <CardHeader subheader="Tags" />
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="add to favorites">
+                            <FavoriteIcon />
+                        </IconButton>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                        <IconButton
+                            className={clsx(classes.expand, {
+                                [classes.expandOpen]: expanded,
+                            })}
+                            onClick={handleExpandClick}
+                            aria-expanded={expanded}
+                            aria-label="show more"
+                        >
+                            <ExpandMoreIcon />
+                        </IconButton>
+                    </CardActions>
+                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+                        <CardContent>
+                            <Typography paragraph>Links:</Typography>
+                            <Typography paragraph>Links come here</Typography>
+                        </CardContent>
+                    </Collapse>
                 </Card>
             ))}
         </>
