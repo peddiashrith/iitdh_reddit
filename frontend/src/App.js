@@ -19,7 +19,6 @@ function App() {
                 {/* <TempNavbar></TempNavbar> */}
                 {/* <SignIn></SignIn> */}
                 <AddPost></AddPost>
-                {/* <MultiTags></MultiTags> */}
                 {/* <Switch>
                     <Route exact path="/posts" component={PostsList} />
                 </Switch> */}

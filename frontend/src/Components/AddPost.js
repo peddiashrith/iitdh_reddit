@@ -8,6 +8,7 @@ import PostAddIcon from "@material-ui/icons/PostAdd";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import MultiTags from "./MultiTags";
 
 const useStyles = (theme) => ({
     paper: {
@@ -92,6 +93,9 @@ export class AddPost extends Component {
                                     label="Post Description"
                                     name="post_description"
                                 />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <MultiTags />
                             </Grid>
                         </Grid>
                         <Button
