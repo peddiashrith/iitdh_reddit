@@ -7,6 +7,8 @@ import TempNavbar from "./Components/TempNavbar";
 import Dashboard from "./Components/Dashboard";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
+import AddPost from "./Components/AddPost";
+import MultiTags from "./Components/MultiTags";
 
 function App() {
     return (
@@ -14,9 +16,10 @@ function App() {
             <Router>
                 <Navbar></Navbar>
                 {/* <PostsList></PostsList> */}
-                <TempNavbar></TempNavbar>
-                {/* <SignUp></SignUp> */}
-                {/* <Dashboard></Dashboard> */}
+                {/* <TempNavbar></TempNavbar> */}
+                {/* <SignIn></SignIn> */}
+                <AddPost></AddPost>
+                {/* <MultiTags></MultiTags> */}
                 {/* <Switch>
                     <Route exact path="/posts" component={PostsList} />
                 </Switch> */}
