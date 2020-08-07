@@ -7,6 +7,7 @@
 1. Postgresql -- pip install psycopg2
 2. Django -- pip install Django
 3. Crispy Forms -- pip install django-crispy-forms
+4. Allauth Login functionality -- pip install django-allauth
 
 ## Starting Instructions
 

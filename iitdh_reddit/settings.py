@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'post',
     'crispy_forms',
 
-    #all-auth
+    # all-auth
     'allauth.socialaccount.providers.google',
     'allauth',
     'allauth.account',
@@ -87,9 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'iitdh_reddit',
         'USER': 'postgres',
-        'PASSWORD': 'qwerty',
+        'PASSWORD': 'peddi',
         'HOST': '127.0.0.1',
-        'PORT': '5006',
+        'PORT': '5432',
     }
 }
 
