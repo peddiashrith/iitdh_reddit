@@ -161,7 +161,7 @@ export class AddPost extends Component {
                                                 {...params}
                                                 variant="outlined"
                                                 label="Post Tags"
-                                                placeholder="Favorites"
+                                                placeholder="Link"
                                             />
                                         )}
                                     />
