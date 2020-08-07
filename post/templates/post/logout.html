@@ -1,0 +1,11 @@
+{% extends "post/main.html" %}
+
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+    <h2>You have been logged out</h2>
+    <div class="d-flex justify-content-center p-5">
+			<a class="btn btn-success" href="{% provider_login_url "google" %}">Login Again?</a></a>
+    </div>
+{% endblock %}

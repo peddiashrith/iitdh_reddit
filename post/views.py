@@ -6,7 +6,6 @@ from .models import *
 from .forms import *
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
-
 def pending_posts(request):
     posts = Post.objects.filter(status=Post.P)
     context = {"posts": posts}
