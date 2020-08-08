@@ -1,7 +1,3 @@
-ul {
-    margin: 0;
-}
-
 .bg-steel {
     background-color: #5f788a;
 }
@@ -19,12 +15,11 @@ ul {
 }
 
 .content-section {
-    max-width: fit-content;
     background: #ffffff;
-    padding: 10px 20px;
+    padding: 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    margin-bottom: 20px;
+    margin: 10px;
 }
 
 .article-title {
@@ -39,6 +34,10 @@ a.article-title:hover {
 
 .article-content {
     white-space: pre-line;
+}
+
+.article-content:hover {
+    text-decoration: none;
 }
 
 .article-img {
@@ -62,15 +61,4 @@ a.article-title:hover {
     width: 25px;
     height: 25px;
     vertical-align: middle;
-}
-
-.account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-}
-
-.account-heading {
-    font-size: 2.5rem;
 }
