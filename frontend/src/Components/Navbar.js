@@ -11,10 +11,15 @@ import Button from "@material-ui/core/Button";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Logo from "../images/Logo.png";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+    },
+    logo: {
+        maxWidth: 40,
+        paddingRight: "10px",
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -94,7 +99,7 @@ export default function SearchAppBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" title={<img src={Logo} />}>
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -104,6 +109,7 @@ export default function SearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <img src={Logo} alt="logo" className={classes.logo} />
                     <Typography className={classes.title} variant="h6" noWrap>
                         IITDH Reddit
                     </Typography>

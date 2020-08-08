@@ -14,12 +14,14 @@ function CardTemp() {
                         the same way, links are added and placed next to each
                         other by adding .card-link to an tag.
                     </p>
-                    <a href="#" class="btn btn-primary">
-                        Accept
-                    </a>{" "}
-                    <a href="#" class="btn btn-danger">
-                        Reject
-                    </a>
+                    <div class="float-right">
+                        <a href="#" class="btn btn-primary">
+                            Accept
+                        </a>{" "}
+                        <a href="#" class="btn btn-danger">
+                            Reject
+                        </a>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <h5>Tags: </h5>
