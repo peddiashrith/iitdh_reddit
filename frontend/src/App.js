@@ -9,6 +9,7 @@ import SignUp from "./Components/SignUp";
 import AddPost from "./Components/AddPost";
 import MultiTags from "./Components/MultiTags";
 import AllPosts from "./Components/AllPosts";
+import CardTemp from "./Components/CardTemp";
 function App() {
     return (
         <div className="App">
@@ -17,8 +18,10 @@ function App() {
                 {/* <PostsList></PostsList> */}
                 {/* <SignIn></SignIn> */}
                 {/* <AddPost></AddPost> */}
-                <AllPosts></AllPosts>
-                <AllPosts></AllPosts>
+                {/* <AllPosts></AllPosts> */}
+                {/* <AllPosts></AllPosts> */}
+                <CardTemp></CardTemp>
+                <CardTemp></CardTemp>
             </Router>
         </div>
     );
