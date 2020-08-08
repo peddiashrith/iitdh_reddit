@@ -1,0 +1,13 @@
+/* Fix weird box around button on click */
+/* Don't use widht: 40rem */
+*:focus {
+    outline: none !important;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* width: 60rem; */ /* while resizing card is overflowing the navbar*/
+}
