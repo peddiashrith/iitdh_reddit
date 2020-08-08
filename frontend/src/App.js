@@ -21,7 +21,7 @@ function App() {
                 {/* <AllPosts></AllPosts> */}
                 {/* <AllPosts></AllPosts> */}
                 <CardTemp></CardTemp>
-                <CardTemp></CardTemp>
+                {/* <CardTemp></CardTemp> */}
             </Router>
         </div>
     );
