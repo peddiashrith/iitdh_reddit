@@ -15,10 +15,8 @@ function App() {
         <div className="App">
             <Router>
                 <Navbar></Navbar>
-                {/* <PostsList></PostsList> */}
                 {/* <SignIn></SignIn> */}
                 {/* <AddPost></AddPost> */}
-                {/* <AllPosts></AllPosts> */}
                 {/* <AllPosts></AllPosts> */}
                 <CardTemp></CardTemp>
                 {/* <CardTemp></CardTemp> */}

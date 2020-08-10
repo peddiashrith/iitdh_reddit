@@ -3,6 +3,9 @@ import React from "react";
 function CardTemp() {
     return (
         <div class="container">
+            <div class="jumbotron">
+                <h3>r/Django</h3>
+            </div>
             <div class="card">
                 <h5 class="card-header card-link">Ashrith</h5>
                 <div class="card-body">
