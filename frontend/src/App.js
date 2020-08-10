@@ -10,15 +10,19 @@ import AddPost from "./Components/AddPost";
 import MultiTags from "./Components/MultiTags";
 import AllPosts from "./Components/AllPosts";
 import CardTemp from "./Components/CardTemp";
+import Login from "./Components/Login";
+import GoogleBtn from "./Components/GoogleBtn";
 function App() {
     return (
         <div className="App">
             <Router>
                 <Navbar></Navbar>
+                {/* <Login></Login> */}
+                {/* <GoogleBtn></GoogleBtn> */}
+                <SignIn></SignIn>
                 {/* <SignIn></SignIn> */}
                 {/* <AddPost></AddPost> */}
                 {/* <AllPosts></AllPosts> */}
-                <CardTemp></CardTemp>
                 {/* <CardTemp></CardTemp> */}
             </Router>
         </div>
