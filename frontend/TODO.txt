@@ -1,9 +1,9 @@
 Features:
 1. Create a profile page for the users
+	Use material ui chips in user profile section
 2. Connect authentication process
 3. Some sidebar if necessary
 4. Moderators page
-
 
 Extra user interactions:
 Use SnackBar from material UI
