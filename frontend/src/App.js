@@ -19,11 +19,11 @@ function App() {
                 <Navbar></Navbar>
                 {/* <Login></Login> */}
                 {/* <GoogleBtn></GoogleBtn> */}
-                <SignIn></SignIn>
+                {/* <SignIn></SignIn> */}
                 {/* <SignIn></SignIn> */}
                 {/* <AddPost></AddPost> */}
                 {/* <AllPosts></AllPosts> */}
-                {/* <CardTemp></CardTemp> */}
+                <CardTemp></CardTemp>
             </Router>
         </div>
     );
