@@ -6,7 +6,7 @@ from django.contrib.postgres.fields import ArrayField
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
         return self.name
@@ -22,7 +22,7 @@ class SubReddit(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     subreddit_following = models.ManyToManyField(SubReddit, blank=True)
 
     def __str__(self):
@@ -43,8 +43,7 @@ class Post(models.Model):
     subreddit = models.ForeignKey(
         SubReddit, on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    links = ArrayField(models.URLField(
-        max_length=500, blank=True, null=True), size=10)
+    description = models.TextField(max_length=5120, blank=True, null=True)
     status = models.CharField(
         max_length=10, choices=status_choices, default=P)
 
@@ -54,6 +53,14 @@ class Post(models.Model):
         return self.header
 
 
+class Link(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="links")
+    url = models.URLField(max_length=2048)
+
+    def __str__(self):
+        return f'[{self.url}] on post "{self.post.header}"'
+
+
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -61,4 +68,4 @@ class Comment(models.Model):
     text = models.CharField(max_length=256)
 
     def __str__(self):
-        return f'[{self.text}] by {self.user.username} on ({self.post.header}) at  <{self.timestamp}> '
+        return f'[{self.text}] by {self.user.username} on ({self.post.header}) at  <{self.timestamp}>'
