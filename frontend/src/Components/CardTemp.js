@@ -1,55 +1,70 @@
-import React from "react";
+import React, { Component } from 'react';
 
-function CardTemp() {
-    return (
-        <div class="container">
-            <div class="jumbotron">
-                <h3>r/Django</h3>
-            </div>
-            <div class="card">
-                <h5 class="card-header card-link">Ashrith</h5>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Django together with Reactjs is Dope!
-                    </h5>
-                    <p class="card-text">
-                        Card titles are used by adding .card-title to a tag. In
-                        the same way, links are added and placed next to each
-                        other by adding .card-link to an tag.
-                    </p>
-                    <div class="float-right">
-                        <a href="#" class="btn btn-primary">
-                            Accept
-                        </a>{" "}
-                        <a href="#" class="btn btn-danger">
-                            Reject
-                        </a>
+export class CardTemp extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            allposts: [],
+        };
+    }
+
+    componentDidMount = async () => {
+        fetch('http://localhost:8000/api/feed/')
+            .then((response) => response.json())
+            .then((data) =>
+                this.setState(
+                    {
+                        allposts: data,
+                    },
+                    () => console.log(this.state)
+                )
+            );
+    };
+
+    render() {
+        return (
+            <div className='container'>
+                <div className='jumbotron'>
+                    <h3>r/Django</h3>
+                </div>
+                {this.state.allposts.map((post, index) => (
+                    <div className='card' key={post.id}>
+                        <h5 className='card-header card-link'>
+                            {post.author.username}
+                        </h5>
+                        <div className='card-body'>
+                            <p className='card-text'>{post.description}</p>
+                            <div className='float-right'>
+                                <a href='#' className='btn btn-primary'>
+                                    Accept
+                                </a>{' '}
+                                <a href='#' className='btn btn-danger'>
+                                    Reject
+                                </a>
+                            </div>
+                        </div>
+                        <div className='card-footer'>
+                            <h5>Tags: </h5>
+                            {post.tags.map((tag, index) => (
+                                <a href='#' className='card-link' key={index}>
+                                    {tag}
+                                </a>
+                            ))}
+                        </div>
+                        <div className='card-footer'>
+                            <h5>Tags: </h5>
+                            {post.links.map((link, index) => (
+                                <a href='#' className='card-link' key={index}>
+                                    {link}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <h5>Tags: </h5>
-                    <a href="#" class="card-link">
-                        Django
-                    </a>
-                    <a href="#" class="card-link">
-                        Reactjs
-                    </a>
-                </div>
-                <div class="card-footer">
-                    <h5>References: </h5>
-                    <a href="#" class="card-link">
-                        google.com
-                    </a>
-                    <a href="#" class="card-link">
-                        google.com
-                    </a>
-                    <a href="#" class="card-link">
-                        google.com
-                    </a>
-                </div>
+                ))}
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default CardTemp;

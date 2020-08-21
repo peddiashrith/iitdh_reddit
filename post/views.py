@@ -9,6 +9,7 @@ from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 
+from django.contrib.auth.models import User
 from .models import *
 from .forms import *
 from .serializers import *
@@ -248,15 +249,15 @@ class ViewPosts(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
-    def get_permissions(self):
-        permission_classes = []
-        if self.action == 'create' or self.action == 'create_comment':
-            permission_classes = [permissions.IsAuthenticated]
-        elif self.action == 'update' or self.action == 'partial_update':
-            permission_classes = [permissions.IsAuthenticated, EditPostPermission]
-        elif self.action == "delete":
-            permission_classes = [permissions.IsAuthenticated, EditPostPermission, DeletePostPermission]
-        return [permission() for permission in permission_classes]
+    # def get_permissions(self):
+    #     permission_classes = []
+    #     if self.action == 'create' or self.action == 'create_comment':
+    #         permission_classes = [permissions.IsAuthenticated]
+    #     elif self.action == 'update' or self.action == 'partial_update':
+    #         permission_classes = [permissions.IsAuthenticated, EditPostPermission]
+    #     elif self.action == "delete":
+    #         permission_classes = [permissions.IsAuthenticated, EditPostPermission, DeletePostPermission]
+    #     return [permission() for permission in permission_classes]
 
     """
     Sample create post Json body
@@ -278,11 +279,13 @@ class ViewPosts(viewsets.ModelViewSet):
     """
 
     def create(self, request, *args, **kwargs):
+        print("Entered function")
         data = JSONParser().parse(request)
-        if not is_user_following_subreddit(request.user.id, data.get('subreddit')):
-            return Response(data={'detail': 'User is not following the sub reddit'},
-                            status=status.HTTP_401_UNAUTHORIZED)
-        data['author'] = request.user.id
+        # if not is_user_following_subreddit(request.user.id, data.get('subreddit')):
+        #     return Response(data={'detail': 'User is not following the sub reddit'},
+        #                     status=status.HTTP_401_UNAUTHORIZED)
+        tempuser = User.objects.get(username="ashri")
+        data['author'] = tempuser.id
         tags = data.pop('tags', None)
         links = data.pop('links', None)
         serializer = PostSerializer(data=data, context={"tags": tags, "links": links})

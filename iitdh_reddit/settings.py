@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'post',
     'crispy_forms',
     'rest_framework',
-    'django_extensions'
+    'django_extensions',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -90,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'iitdh_reddit',
         'USER': 'postgres',
-        'PASSWORD': '123456',
+        'PASSWORD': 'peddi',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -142,3 +144,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ["../post/static/"]
 MEDIA_URL = '/media/'
+
+CORS_ORIGIN_WHITELIST = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ORIGIN_ALLOW_ALL = True
