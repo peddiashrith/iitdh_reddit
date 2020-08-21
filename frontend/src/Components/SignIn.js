@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import PersonIcon from "@material-ui/icons/Person";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import React, { Component } from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import PersonIcon from '@material-ui/icons/Person';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const CLIENT_ID =
-    "220814816148-ruqpghv4hoo50veti2mjm2f4qvugnd80.apps.googleusercontent.com";
+    '220814816148-ruqpghv4hoo50veti2mjm2f4qvugnd80.apps.googleusercontent.com';
 
 const useStyles = (theme) => ({
     paper: {
         marginTop: theme.spacing(8),
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     avatar: {
         margin: theme.spacing(1),
@@ -34,7 +34,7 @@ export class SignIn extends Component {
 
         this.state = {
             isLoggedIn: false,
-            accessToken: "",
+            accessToken: '',
             // name: "",
             // email: "",
             // image: "",
@@ -57,32 +57,32 @@ export class SignIn extends Component {
     handleLogout = (response) => {
         this.setState({
             isLogined: false,
-            accessToken: "",
+            accessToken: '',
         });
     };
 
     handleLoginFailure(response) {
-        alert("Failed to log in");
+        alert('Failed to log in');
     }
 
     handleLogoutFailure(response) {
-        alert("Failed to log out");
+        alert('Failed to log out');
     }
 
     render() {
         const { classes } = this.props;
         return (
-            <Container component="main" maxWidth="xs">
+            <Container component='main' maxWidth='xs'>
                 <CssBaseline />
                 <div className={classes.paper}>
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5">
+                    <Typography component='h1' variant='h5'>
                         Sign in
                     </Typography>
-                    <Typography component="h2" variant="h5">
-                        Login with <strong>IITDH</strong> account
+                    <Typography component='h2' variant='h5'>
+                        Login with <strong>IITDh</strong> account
                     </Typography>
                     <GoogleLogin
                         clientId={CLIENT_ID}
@@ -90,10 +90,10 @@ export class SignIn extends Component {
                             renderProps /* Custom styling for the google button*/
                         ) => (
                             <Button
-                                type="submit"
+                                type='submit'
                                 fullWidth
-                                variant="contained"
-                                color="primary"
+                                variant='contained'
+                                color='primary'
                                 className={classes.submit}
                                 startIcon={<PersonIcon></PersonIcon>}
                                 onClick={renderProps.onClick}
@@ -102,11 +102,11 @@ export class SignIn extends Component {
                                 Login with Google
                             </Button>
                         )}
-                        buttonText="Login with Google"
+                        buttonText='Login with Google'
                         onSuccess={this.handleLogin}
                         onFailure={this.handleLoginFailure}
-                        cookiePolicy={"single_host_origin"}
-                        responseType="code,token"
+                        cookiePolicy={'single_host_origin'}
+                        responseType='code,token'
                     />
 
                     {/* <Typography variant="h5">
