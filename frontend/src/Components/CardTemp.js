@@ -53,7 +53,7 @@ export class CardTemp extends Component {
                             ))}
                         </div>
                         <div className='card-footer'>
-                            <h5>Tags: </h5>
+                            <h5>Links: </h5>
                             {post.links.map((link, index) => (
                                 <a href='#' className='card-link' key={index}>
                                     {link}
