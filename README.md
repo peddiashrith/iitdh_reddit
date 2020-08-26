@@ -17,6 +17,9 @@
 3. Python manage.py migrate
 4. python manage.py createsuperuser (To access django built-in admin panel)
 5. python manage.py runserver
+6. cd frontend
+7. npm install
+8. npm start
 
 ## Contributing
 
